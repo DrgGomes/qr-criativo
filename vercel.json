@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/r/:slug", "destination": "/api/redirect?slug=:slug" }
+  ]
+}
