@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR Criativo Pro - Com Métricas Reais</title>
+  <title>QR Criativo Pro - Gerador Inteligente e Métricas</title>
 
   <!-- Allowed Basecoat UI & Fonts -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.0.2/dist/basecoat.cdn.min.css">
@@ -268,23 +268,20 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
       display: block;
     }
 
-    /* Supabase Status Pill */
-    .supabase-pill {
-      font-size: 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.3rem 0.65rem;
-      border-radius: 9999px;
-      background: rgba(16, 185, 129, 0.1);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.25);
+    /* Navigation link hover */
+    .nav-link {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      padding: 0.35rem 0.6rem;
+      border-radius: 0.5rem;
     }
 
-    .supabase-pill.offline {
-      background: rgba(245, 158, 11, 0.1);
-      color: #fbbf24;
-      border-color: rgba(245, 158, 11, 0.25);
+    .nav-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     /* Modal Backdrop */
@@ -407,8 +404,8 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
   <div class="hero-glow" aria-hidden="true"></div>
 
   <!-- Header / Nav -->
-  <header style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 0 2rem; position: relative; z-index: 10;">
-    <div style="display: flex; align-items: center; gap: 0.75rem;">
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 0 2rem; position: relative; z-index: 10; flex-wrap: wrap; gap: 1rem;">
+    <a href="#" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
       <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="3" width="7" height="7"></rect>
@@ -417,46 +414,32 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
           <rect x="3" y="14" width="7" height="7"></rect>
         </svg>
       </div>
-      <div>
-        <div class="brand-title" style="font-weight: 800; font-size: 1.25rem; line-height: 1.1; color: #fff;">
-          QR Criativo <span class="badge-pro" style="font-size: 0.68rem; padding: 0.15rem 0.4rem; border-radius: 4px; vertical-align: middle; margin-left: 0.25rem;">PRO</span>
-        </div>
-        <div style="font-size: 0.75rem; color: #9ca3af;">Supabase Cloud Backend</div>
+      <div class="brand-title" style="font-weight: 800; font-size: 1.25rem; line-height: 1.1; color: #fff;">
+        QR Criativo
       </div>
-    </div>
+    </a>
 
-    <!-- Nav Items -->
-    <nav style="display: flex; align-items: center; gap: 0.75rem;">
-      <button id="btn-open-config" class="btn btn-sm btn-ghost" title="Configurar conexão com o Supabase">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-        </svg>
-        <span class="desktop-only">Supabase</span>
-      </button>
-
-      <!-- User Auth State Button -->
-      <div id="auth-actions">
-        <button id="btn-open-auth" class="btn btn-sm btn-gradient">
-          <span>Entrar / Cadastrar</span>
-        </button>
-      </div>
+    <!-- Clean Navigation Menu -->
+    <nav style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" aria-label="Menu principal">
+      <a href="#generator-section" class="nav-link">Gerador</a>
+      <a href="#dashboard-section" id="nav-link-qrs" class="nav-link">Meus QR Codes</a>
+      <a href="#dashboard-section" id="nav-link-analytics" class="nav-link">Analytics</a>
+      <a href="#pricing-section" class="nav-link">Planos</a>
     </nav>
+
+    <!-- User Auth State Actions -->
+    <div id="auth-actions" style="display: flex; align-items: center; gap: 0.6rem;">
+      <!-- Populated dynamically via renderUserHeader() -->
+    </div>
   </header>
 
   <!-- SECTION 1: HERO -->
-  <section class="shell-hero" style="text-align: center; margin: 2rem 0 3.5rem; position: relative; z-index: 5;">
-    <div style="margin-bottom: 1rem;">
-      <span class="supabase-pill" id="supabase-status-badge">
-        <span style="width: 7px; height: 7px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
-        Supabase Conectado &bull; RLS Ativo
-      </span>
-    </div>
+  <section class="shell-hero" style="text-align: center; margin: 1.5rem 0 3.5rem; position: relative; z-index: 5;">
     <h1 style="font-size: clamp(2.3rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem;">
       QR Codes lindos. <span class="text-gradient">Grátis.</span> Para sempre.
     </h1>
     <p style="font-size: clamp(1rem, 2vw, 1.2rem); color: #9ca3af; max-width: 680px; margin: 0 auto 2rem; line-height: 1.6;">
-      Gere códigos dinâmicos com métricas em tempo real, links editáveis a qualquer momento, estilização completa e integração com Supabase.
+      Gere códigos dinâmicos com métricas em tempo real, links editáveis a qualquer momento, design personalizado e alta qualidade de leitura.
     </p>
 
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
@@ -583,7 +566,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
                 <polyline points="17 21 17 13 7 13 7 21"></polyline>
                 <polyline points="7 3 7 8 15 8"></polyline>
               </svg>
-              Salvar QR Code no Supabase
+              Salvar QR Code
             </button>
             <button id="btn-quick-preview" class="btn btn-ghost" style="padding: 0.85rem 1.25rem;">
               Atualizar Preview
@@ -598,7 +581,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
               <div style="font-weight: 700; font-size: 1.1rem; color: #fff;" id="preview-display-title">Meu Link Principal</div>
               <div style="font-size: 0.75rem; color: #9ca3af; display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-top: 0.2rem;">
                 <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>
-                <span id="preview-slug-text">qrcriativo.vercel.app/r/a9x4k2b1</span>
+                <span id="preview-slug-text">qrcriativo.com.br/r/a9x4k2b1</span>
               </div>
             </div>
 
@@ -643,7 +626,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
     <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
       <div>
         <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8b5cf6; font-weight: 700;">Painel de Controle</span>
-        <h2 style="font-size: 1.85rem; font-weight: 700; margin: 0.2rem 0 0; color: #fff;">Meus QR Codes & Métricas Supabase</h2>
+        <h2 style="font-size: 1.85rem; font-weight: 700; margin: 0.2rem 0 0; color: #fff;">Meus QR Codes & Métricas</h2>
       </div>
 
       <!-- Dashboard Tabs -->
@@ -652,7 +635,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
           Meus QR Codes
         </button>
         <button id="tab-btn-analytics" class="btn btn-sm btn-ghost" style="border: none; color: #9ca3af;">
-          Analytics Real
+          Analytics
         </button>
         <button id="tab-btn-plan" class="btn btn-sm btn-ghost" style="border: none; color: #9ca3af;">
           Meu Plano
@@ -711,9 +694,9 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
             <div>
               <h4 style="font-size: 1.1rem; font-weight: 700; margin: 0; color: #fff;">Scans dos Últimos 7 Dias</h4>
-              <p style="font-size: 0.78rem; color: #9ca3af; margin: 0.2rem 0 0;">Volume de leitura diária registrado no scan_events</p>
+              <p style="font-size: 0.78rem; color: #9ca3af; margin: 0.2rem 0 0;">Volume de acessos diários aos seus QR codes</p>
             </div>
-            <span class="badge-pro" style="font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 999px;">Tempo Real</span>
+            <span class="badge-pro" style="font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 999px;">Atualizado</span>
           </div>
           <div id="scans-bar-chart" class="chart-box" style="height: 240px;"></div>
         </div>
@@ -917,7 +900,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
           <span class="badge-free" style="font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 999px;">GRÁTIS</span>
         </div>
         <div style="font-weight: 700; color: #fff; margin-bottom: 0.25rem;">Analytics em Tempo Real</div>
-        <div style="font-size: 0.82rem; color: #9ca3af;">Rastreamento instantâneo de cada clique com contagem exata no Supabase.</div>
+        <div style="font-size: 0.82rem; color: #9ca3af;">Rastreamento instantâneo de cada leitura com relatórios completos de desempenho.</div>
       </div>
 
       <div class="glass-card" style="padding: 1.25rem;">
@@ -959,9 +942,9 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
   <footer style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2.5rem; margin-top: 2rem;">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
       <div>
-        <div style="font-weight: 800; font-size: 1.1rem; color: #fff;">QR Criativo Pro</div>
+        <div style="font-weight: 800; font-size: 1.1rem; color: #fff;">QR Criativo</div>
         <p style="font-size: 0.8rem; color: #9ca3af; margin: 0.25rem 0 0;">
-          Pronto para Vercel & Supabase. Sem bibliotecas externas pesadas.
+          A plataforma completa para criar, personalizar e rastrear seus códigos QR.
         </p>
       </div>
       <div style="display: flex; gap: 1.25rem; font-size: 0.85rem; color: #9ca3af;">
@@ -972,82 +955,9 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
       </div>
     </div>
     <div style="font-size: 0.75rem; color: #6b7280; text-align: center; margin-top: 2rem;">
-      &copy; 2025 QR Criativo Pro &bull; Criado com padrões abertos e acessibilidade total.
+      &copy; 2025 QR Criativo &bull; Todos os direitos reservados.
     </div>
   </footer>
-
-  <!-- MODAL: SUPABASE CONFIGURATION & DDL SCHEMA -->
-  <div id="modal-supabase-config" class="modal-backdrop">
-    <div class="glass-card" style="width: 100%; max-width: 540px; padding: 1.75rem; background: #12131d;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0; color: #fff;">Configuração Supabase</h3>
-        <button id="btn-close-config-modal" class="btn btn-xs btn-ghost">&times;</button>
-      </div>
-
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 1rem;">
-        Insira suas credenciais do Supabase para persistência direta em nuvem. Seus dados são salvos localmente no navegador.
-      </p>
-
-      <div style="margin-bottom: 1rem;">
-        <label class="app-label" for="cfg-supabase-url">SUPABASE_URL</label>
-        <input type="text" id="cfg-supabase-url" class="app-input" placeholder="https://xyzcompany.supabase.co">
-      </div>
-
-      <div style="margin-bottom: 1.25rem;">
-        <label class="app-label" for="cfg-supabase-anon">SUPABASE_ANON_KEY</label>
-        <input type="password" id="cfg-supabase-anon" class="app-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
-      </div>
-
-      <!-- Schema SQL preview toggle -->
-      <details style="margin-bottom: 1.25rem; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.06);">
-        <summary style="cursor: pointer; color: #c084fc; font-weight: 600;">Ver script SQL das tabelas (qrcodes, scan_events, profiles)</summary>
-        <pre style="margin-top: 0.5rem; padding: 0.5rem; background: #08080c; border-radius: 4px; overflow-x: auto; font-size: 0.7rem; color: #a78bfa;">
--- Criação das tabelas no Supabase:
-CREATE TABLE profiles (
-  id uuid PRIMARY KEY REFERENCES auth.users ON DELETE CASCADE,
-  email text,
-  name text,
-  plan text DEFAULT 'free',
-  plan_expires_at timestamptz,
-  created_at timestamptz DEFAULT now()
-);
-
-CREATE TABLE qrcodes (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id uuid REFERENCES auth.users,
-  title text,
-  slug text UNIQUE,
-  type text,
-  destination text,
-  config jsonb,
-  is_dynamic boolean DEFAULT true,
-  is_active boolean DEFAULT true,
-  scans_count int DEFAULT 0,
-  created_at timestamptz DEFAULT now()
-);
-
-CREATE TABLE scan_events (
-  id bigserial PRIMARY KEY,
-  qrcode_id uuid REFERENCES qrcodes ON DELETE CASCADE,
-  scanned_at timestamptz DEFAULT now(),
-  device_type text,
-  browser text,
-  city text,
-  country text
-);
-        </pre>
-      </details>
-
-      <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-save-supabase-config" class="btn btn-gradient" style="flex: 1; padding: 0.65rem;">
-          Salvar Conexão
-        </button>
-        <button id="btn-reset-demo-data" class="btn btn-ghost" style="padding: 0.65rem; font-size: 0.8rem;" title="Restaurar dados de exemplo">
-          Resetar Dados
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- MODAL: AUTH MODAL -->
   <div id="modal-auth" class="modal-backdrop">
@@ -1295,7 +1205,7 @@ CREATE TABLE scan_events (
       } else {
         html = `
           <label class="app-label" for="field-generic">Conteúdo ou Endereço</label>
-          <input type="text" id="field-generic" class="app-input" value="https://qrcriativo.vercel.app">
+          <input type="text" id="field-generic" class="app-input" value="https://qrcriativo.com.br">
         `;
       }
 
@@ -1312,7 +1222,7 @@ CREATE TABLE scan_events (
       const type = APP_STATE.selectedType;
       if (type === 'url') {
         const el = document.getElementById('field-url');
-        return el ? el.value.trim() : 'https://qrcriativo.vercel.app';
+        return el ? el.value.trim() : 'https://seusite.com.br';
       }
       if (type === 'pix') {
         const k = document.getElementById('field-pix-key')?.value.trim() || 'chave';
@@ -1339,7 +1249,7 @@ CREATE TABLE scan_events (
         return `BEGIN:VCARD\nVERSION:3.0\nN:${name}\nFN:${name}\nTEL:${tel}\nEMAIL:${em}\nEND:VCARD`;
       }
       const generic = document.getElementById('field-generic');
-      return generic ? generic.value.trim() : 'https://qrcriativo.vercel.app';
+      return generic ? generic.value.trim() : 'https://seusite.com.br';
     }
 
     // Render / Update QR Code Preview
@@ -1360,9 +1270,9 @@ CREATE TABLE scan_events (
 
       const payload = getFormDestinationPayload();
       const slug = 'r/' + generateSlug();
-      const renderText = isDynamic ? `https://qrcriativo.vercel.app/${slug}` : payload;
+      const renderText = isDynamic ? `https://qrcriativo.com.br/${slug}` : payload;
 
-      document.getElementById('preview-slug-text').textContent = isDynamic ? `qrcriativo.vercel.app/${slug}` : 'Código Estático Permanente';
+      document.getElementById('preview-slug-text').textContent = isDynamic ? `qrcriativo.com.br/${slug}` : 'Código Estático Permanente';
 
       // Watermark toggle based on user plan
       const watermarkEl = document.getElementById('preview-watermark');
@@ -1396,16 +1306,23 @@ CREATE TABLE scan_events (
       if (APP_STATE.user) {
         const planBadge = APP_STATE.user.plan === 'pro' 
           ? '<span class="badge-pro" style="font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px;">PRO</span>'
-          : (APP_STATE.user.plan === 'lifetime' ? '<span style="font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px; background: rgba(236, 72, 153, 0.2); color:#f472b6;">VITALÍCIO</span>' : '<span class="badge-free" style="font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px;">FREE</span>');
+          : (APP_STATE.user.plan === 'lifetime' ? '<span style="font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px; background: rgba(236, 72, 153, 0.2); color:#f472b6;">VITALÍCIO</span>' : '<span class="badge-free" style="font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px;">GRÁTIS</span>');
+
+        const initial = APP_STATE.user.name ? APP_STATE.user.name.charAt(0).toUpperCase() : 'U';
 
         container.innerHTML = `
-          <div style="display: flex; align-items: center; gap: 0.6rem;">
-            <div style="text-align: right; line-height: 1.2;">
-              <div style="font-size: 0.85rem; font-weight: 600; color: #fff;">${APP_STATE.user.name} ${planBadge}</div>
-              <div style="font-size: 0.7rem; color: #9ca3af;">${APP_STATE.user.email}</div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); padding: 0.3rem 0.7rem; border-radius: 999px;">
+              <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--accent-gradient); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #fff;">
+                ${initial}
+              </div>
+              <div style="line-height: 1.1; text-align: left;">
+                <div style="font-size: 0.8rem; font-weight: 600; color: #fff;">${APP_STATE.user.name}</div>
+              </div>
+              ${planBadge}
             </div>
-            <button id="btn-logout" class="btn btn-xs btn-ghost" title="Encerrar sessão" style="border-radius: 50%; width: 32px; height: 32px; padding: 0; display: flex; align-items: center; justify-content: center;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            <button id="btn-logout" class="btn btn-sm btn-ghost" title="Encerrar sessão" style="font-size: 0.8rem; padding: 0.4rem 0.75rem;">
+              Sair
             </button>
           </div>
         `;
@@ -1413,19 +1330,26 @@ CREATE TABLE scan_events (
         document.getElementById('btn-logout').addEventListener('click', () => {
           APP_STATE.user = null;
           localStorage.removeItem('supabase_mock_user');
-          showToast('Sessão encerrada com sucesso');
+          showToast('Você saiu da sua conta.');
           renderUserHeader();
           updatePlanView();
           renderQRCodesList();
         });
       } else {
         container.innerHTML = `
-          <button id="btn-open-auth" class="btn btn-sm btn-gradient">
-            <span>Entrar / Cadastrar</span>
+          <button id="btn-open-login" class="btn btn-sm btn-ghost" style="font-size: 0.85rem; padding: 0.45rem 0.9rem;">
+            Entrar
+          </button>
+          <button id="btn-open-register" class="btn btn-sm btn-gradient" style="font-size: 0.85rem; padding: 0.45rem 0.9rem;">
+            Criar conta
           </button>
         `;
-        document.getElementById('btn-open-auth').addEventListener('click', () => {
-          document.getElementById('modal-auth').classList.add('open');
+
+        document.getElementById('btn-open-login').addEventListener('click', () => {
+          openAuthModal('login');
+        });
+        document.getElementById('btn-open-register').addEventListener('click', () => {
+          openAuthModal('register');
         });
       }
 
@@ -1450,8 +1374,8 @@ CREATE TABLE scan_events (
     // Save QR Code
     function saveQRCode() {
       if (!APP_STATE.user) {
-        document.getElementById('modal-auth').classList.add('open');
-        showToast('Faça login para salvar seus QR Codes na nuvem.');
+        openAuthModal('login');
+        showToast('Faça login para salvar seus QR codes na sua conta.');
         return;
       }
 
@@ -1459,43 +1383,47 @@ CREATE TABLE scan_events (
       const isPaid = APP_STATE.user.plan === 'pro' || APP_STATE.user.plan === 'lifetime';
 
       if (!isPaid && userQRs.length >= 2) {
-        showToast('Limite do Plano Grátis atingido (máx. 2 QR Codes). Faça upgrade para ilimitado!', true);
+        showToast('Limite do plano gratuito atingido (máx. 2 QR codes). Faça upgrade para ter códigos ilimitados!', true);
         window.location.hash = '#pricing-section';
         return;
       }
 
-      const title = document.getElementById('qr-title-input').value.trim() || 'Novo QR Code';
-      const destination = getFormDestinationPayload();
-      const isDynamic = document.getElementById('qr-is-dynamic').value === 'true';
-      const fg = document.getElementById('qr-fg-color').value;
-      const bg = document.getElementById('qr-bg-color').value;
-      const correction = document.getElementById('qr-correction').value;
+      try {
+        const title = document.getElementById('qr-title-input').value.trim() || 'Novo QR Code';
+        const destination = getFormDestinationPayload();
+        const isDynamic = document.getElementById('qr-is-dynamic').value === 'true';
+        const fg = document.getElementById('qr-fg-color').value;
+        const bg = document.getElementById('qr-bg-color').value;
+        const correction = document.getElementById('qr-correction').value;
 
-      const newQR = {
-        id: 'qr_' + Date.now().toString(36),
-        user_id: APP_STATE.user.id,
-        title: title,
-        slug: generateSlug(),
-        type: APP_STATE.selectedType,
-        destination: destination,
-        config: { fg, bg, correction },
-        is_dynamic: isDynamic,
-        is_active: true,
-        scans_count: 0,
-        created_at: new Date().toISOString()
-      };
+        const newQR = {
+          id: 'qr_' + Date.now().toString(36),
+          user_id: APP_STATE.user.id,
+          title: title,
+          slug: generateSlug(),
+          type: APP_STATE.selectedType,
+          destination: destination,
+          config: { fg, bg, correction },
+          is_dynamic: isDynamic,
+          is_active: true,
+          scans_count: 0,
+          created_at: new Date().toISOString()
+        };
 
-      APP_STATE.qrcodes.unshift(newQR);
-      localStorage.setItem('supabase_mock_qrcodes', JSON.stringify(APP_STATE.qrcodes));
+        APP_STATE.qrcodes.unshift(newQR);
+        localStorage.setItem('supabase_mock_qrcodes', JSON.stringify(APP_STATE.qrcodes));
 
-      showToast(`QR Code "${title}" salvo com sucesso no Supabase!`);
-      renderQRCodesList();
-      updateQuotaIndicator();
-      updatePreview();
-      
-      // Auto scroll to list
-      window.location.hash = '#dashboard-section';
-      switchTab('qrs');
+        showToast(`QR Code "${title}" salvo com sucesso!`);
+        renderQRCodesList();
+        updateQuotaIndicator();
+        updatePreview();
+        
+        // Auto scroll to list
+        window.location.hash = '#dashboard-section';
+        switchTab('qrs');
+      } catch (e) {
+        showToast('Algo deu errado. Tente novamente.', true);
+      }
     }
 
     // Render Meus QR Codes Tab
@@ -1527,7 +1455,7 @@ CREATE TABLE scan_events (
         card.style.flexDirection = 'column';
 
         const typeInfo = QR_TYPES.find(t => t.id === qr.type) || QR_TYPES[0];
-        const shortUrl = `https://qrcriativo.vercel.app/r/${qr.slug}`;
+        const shortUrl = `https://qrcriativo.com.br/r/${qr.slug}`;
 
         card.innerHTML = `
           <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
@@ -1607,7 +1535,7 @@ CREATE TABLE scan_events (
             localStorage.setItem('supabase_mock_qrcodes', JSON.stringify(APP_STATE.qrcodes));
             renderQRCodesList();
             updateQuotaIndicator();
-            showToast('QR Code excluído do Supabase');
+            showToast('QR Code excluído com sucesso.');
           }
         });
       });
@@ -1879,9 +1807,9 @@ CREATE TABLE scan_events (
       // Plan Change Buttons in Demo / Pricing
       document.querySelectorAll('.btn-set-plan, .plan-cta-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-          const chosenPlan = e.currentTarget.getAttribute('data-plan');
+          const chosenPlan = e.currentTarget.getAttribute('data-plan') || 'pro';
           if (!APP_STATE.user) {
-            document.getElementById('modal-auth').classList.add('open');
+            openAuthModal('register');
             return;
           }
 
@@ -1890,40 +1818,20 @@ CREATE TABLE scan_events (
           renderUserHeader();
           updatePlanView();
           updatePreview();
-          showToast(`Plano alterado para: ${chosenPlan.toUpperCase()}`);
+          const planNames = { free: 'Grátis', pro: 'Pro', lifetime: 'Vitalício' };
+          showToast(`Plano atualizado para ${planNames[chosenPlan] || chosenPlan}!`);
         });
       });
 
-      // Modals
-      const cfgModal = document.getElementById('modal-supabase-config');
-      document.getElementById('btn-open-config').addEventListener('click', () => {
-        document.getElementById('cfg-supabase-url').value = APP_STATE.config.supabaseUrl;
-        document.getElementById('cfg-supabase-anon').value = APP_STATE.config.supabaseKey;
-        cfgModal.classList.add('open');
-      });
-      document.getElementById('btn-close-config-modal').addEventListener('click', () => {
-        cfgModal.classList.remove('open');
-      });
-
-      document.getElementById('btn-save-supabase-config').addEventListener('click', () => {
-        const url = document.getElementById('cfg-supabase-url').value.trim();
-        const key = document.getElementById('cfg-supabase-anon').value.trim();
-        APP_STATE.config.supabaseUrl = url;
-        APP_STATE.config.supabaseKey = key;
-        localStorage.setItem('SUPABASE_URL', url);
-        localStorage.setItem('SUPABASE_ANON_KEY', key);
-        cfgModal.classList.remove('open');
-        showToast('Configurações Supabase salvas com sucesso!');
-      });
-
-      document.getElementById('btn-reset-demo-data').addEventListener('click', () => {
-        if (confirm('Restaurar dados padrão de exemplo?')) {
-          localStorage.removeItem('supabase_mock_qrcodes');
-          localStorage.removeItem('supabase_mock_events');
-          localStorage.removeItem('supabase_mock_user');
-          location.reload();
-        }
-      });
+      // Navigation shortcuts
+      const navQrs = document.getElementById('nav-link-qrs');
+      const navAnalytics = document.getElementById('nav-link-analytics');
+      if (navQrs) {
+        navQrs.addEventListener('click', () => switchTab('qrs'));
+      }
+      if (navAnalytics) {
+        navAnalytics.addEventListener('click', () => switchTab('analytics'));
+      }
 
       // Auth Modal logic
       const authModal = document.getElementById('modal-auth');
@@ -1935,6 +1843,15 @@ CREATE TABLE scan_events (
       const tabReg = document.getElementById('auth-tab-register');
       const nameGroup = document.getElementById('auth-name-group');
       const authSubmit = document.getElementById('auth-submit-btn');
+
+      window.openAuthModal = function(mode) {
+        authModal.classList.add('open');
+        if (mode === 'register') {
+          tabReg.click();
+        } else {
+          tabLogin.click();
+        }
+      };
 
       tabLogin.addEventListener('click', () => {
         tabLogin.style.background = 'rgba(139,92,246,0.2)';
@@ -1956,7 +1873,14 @@ CREATE TABLE scan_events (
 
       document.getElementById('auth-form').addEventListener('submit', () => {
         const email = document.getElementById('auth-email-input').value.trim();
+        const pass = document.getElementById('auth-pass-input').value.trim();
+        const isRegistering = nameGroup.style.display === 'block';
         const name = document.getElementById('auth-name-input').value.trim() || 'Usuário';
+
+        if (!email || !pass) {
+          showToast(isRegistering ? 'Não foi possível criar sua conta. Verifique os dados e tente novamente.' : 'E-mail ou senha incorretos.', true);
+          return;
+        }
 
         APP_STATE.user = {
           id: 'usr_' + Date.now().toString(36),
@@ -1968,7 +1892,7 @@ CREATE TABLE scan_events (
 
         localStorage.setItem('supabase_mock_user', JSON.stringify(APP_STATE.user));
         authModal.classList.remove('open');
-        showToast(`Bem-vindo, ${name}!`);
+        showToast(isRegistering ? `Conta criada com sucesso! Bem-vindo, ${name}!` : `Login realizado com sucesso! Olá, ${name}!`);
         renderUserHeader();
         updatePlanView();
         renderQRCodesList();
